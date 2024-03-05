@@ -1,0 +1,120 @@
+    @media (max-width: 1330px) {
+        .uno {
+            display: none;
+        }
+        .burger-menu {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 1330px) {}
+    
+    @media (max-width: 1230px) {
+        .rashot img {
+            width: 30.094rem;
+            height: 35.77619rem;
+        }
+        .diz {
+            display: none;
+        }
+        .blogers {
+            justify-content: space-around;
+        }
+    }
+    
+    @media (max-width: 1130px) {
+        .rashot img {
+            width: 22.094rem;
+            height: 31.77619rem;
+        }
+    }
+    
+    @media (max-width: 1040px) {
+        .tovars {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    @media (max-width: 980px) {
+        .rashot img {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 910px) {
+        .team {
+            flex-direction: column;
+        }
+        .blog {
+            padding-top: 30%;
+        }
+    }
+    
+    @media (max-width: 830px) {
+        .topmenu {
+            display: none;
+        }
+        .blogers {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    @media (min-width: 830px) {
+        .brg {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 430px) {
+        .sum {
+            display: none;
+        }
+        .logo img {
+            width: 120px;
+        }
+        .podbor .lal {
+            font-size: 3.6rem;
+        }
+        .lol {
+            font-size: 3.6rem;
+        }
+        .txt-3 {
+            flex-direction: column;
+        }
+        .txxt {
+            width: 335px;
+        }
+        .blog {
+            padding-top: 90%;
+        }
+        .fram {
+            width: 21rem;
+        }
+        .podbor {
+            padding-top: 20%;
+        }
+    }
+    
+    #myBtn {
+        display: none;
+        /* скрываем кнопку изначально */
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+    
+    #myBtn:hover {
+        background-color: black;
+    }

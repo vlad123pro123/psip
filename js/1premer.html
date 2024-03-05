@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input value="Нажми меня" onclick="alert('Клик!')" type="button">
+    <input type="button" onclick="countRabbits()" value="Считать кроликов!">
+    <input id="elem" type="button" value="Нажми меня!">
+    <button onclick="alert(this.innerHTML)">Нажми меня</button>
+    <input id="elem1" type="button" value="Нажми меня" />
+
+
+
+    <script>
+        function countRabbits() {
+            for (let i = 1; i <= 3; i++) {
+                alert("Кролик номер " + i);
+            }
+        }
+        elem.onclick = function() {
+            alert('Спасибо');
+        };
+
+        function handler1() {
+            alert('Спасибо!');
+        };
+
+
+        function handler2() {
+            alert('Спасибо ещё раз!');
+        }
+        elem1.onclick = () => alert("Привет");
+        elem1.addEventListener("click", handler1); // Спасибо!
+        elem1.addEventListener("click", handler2); // Спасибо ещё раз!
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input value="Нажми меня" onclick="alert('Клик!')" type="button">
+    <p>Drag the ball.</p>
+
+    <img src="https://js.cx/clipart/ball.svg" style="cursor:pointer" width="40" height="40" id="ball">
+
+
+    <div id="arrowTop" hidden></div>
+    <div id="matrix">
+        <script>
+            for (let i = 0; i < 2000; i++) document.writeln(i)
+        </script>
+    </div>
+
+    <script>
+        arrowTop.onclick = function() {
+            window.scrollTo(pageXOffset, 0);
+            // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+        };
+
+        window.addEventListener('scroll', function() {
+            arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+        });
+        ball.onmousedown = function(event) { // (1) отследить нажатие
+
+            // (2) подготовить к перемещению:
+            // разместить поверх остального содержимого и в абсолютных координатах
+            ball.style.position = 'absolute';
+            ball.style.zIndex = 1000;
+            // переместим в body, чтобы мяч был точно не внутри position:relative
+            document.body.append(ball);
+            // и установим абсолютно спозиционированный мяч под курсор
+
+            moveAt(event.pageX, event.pageY);
+
+            // передвинуть мяч под координаты курсора
+            // и сдвинуть на половину ширины/высоты для центрирования
+            function moveAt(pageX, pageY) {
+                ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+                ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            // (3) перемещать по экрану
+            document.addEventListener('mousemove', onMouseMove);
+
+            // (4) положить мяч, удалить более ненужные обработчики событий
+            ball.onmouseup = function() {
+                document.removeEventListener('mousemove', onMouseMove);
+                ball.onmouseup = null;
+            };
+            ball.ondragstart = function() {
+                return false;
+            };
+
+        };
+    </script>
+
+    <script>
+        ball.onpointerdown = log;
+        ball.onpointerup = log;
+        ball.onpointermove = log;
+        ball.onpointercancel = log;
+
+        let lastEventType;
+        let n = 1;
+
+        function log(event) {
+            if (lastEventType == event.type) {
+                n++;
+                text.value = text.value.replace(/.*\n$/, `${event.type} * ${n}\n`);
+                return;
+            }
+            lastEventType = event.type;
+            n = 1;
+            text.value += event.type + '\n';
+            text.scrollTop = 1e9;
+        }
+    </script>
+
+    <textarea id="text" style="display:block;width:300px;height:100px"></textarea>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+                alert('Отменить!')
+            }
+        });
+        // element.addEventListener('touchstart', (event) => {
+        //     alert('Вы приложили палец к элементу')
+        // })
+    </script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #matrix {
+            width: 400px;
+            margin: auto;
+            overflow: auto;
+            text-align: justify;
+        }
+        
+        #arrowTop {
+            height: 9px;
+            width: 14px;
+            color: green;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        
+        #arrowTop::before {
+            content: '▲';
+        }
+    </style>
+</body>
+
+</html>

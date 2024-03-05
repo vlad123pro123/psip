@@ -1,0 +1,459 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    /*чтобы верстка флексами шла сверху вниз*/
+    flex-wrap: wrap;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #ffffff;
+    margin: 0px;
+}
+
+#element::-webkit-scrollbar {
+    scrollbar-width: thin;
+    /* "auto" или "thin"  */
+    scrollbar-color: #FC1A3B rgb(30, 30, 30);
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+}
+
+.header {
+    background-color: #121214;
+    display: flex;
+    align-items: center;
+    height: 4.25rem;
+    justify-content: space-between;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+
+/* ------------------  */
+
+nav {}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topmenu>li {
+    display: inline-block;
+    margin-right: 4rem;
+    position: relative;
+}
+
+.topmenu>li:last-child {
+    margin-right: 0;
+}
+
+a {
+    display: block;
+    /* padding: 10px 15px; */
+    text-decoration: none;
+    outline: none;
+    color: #FFF;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    /* font-weight: 600; */
+    line-height: normal;
+    text-transform: capitalize;
+    transition: .5s linear;
+}
+
+.fa {
+    font-family: "FontAwesome";
+    color: inherit;
+    padding-left: 10px;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 120%;
+    z-index: 10;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.submenu a {
+    padding: 10px 15px;
+}
+
+.one .submenu {
+    color: #13132d;
+    display: none;
+}
+
+.one .submenu {
+    background: #121214;
+}
+
+.one .submenu li:hover {
+    background: #313136;
+}
+
+.one ul a {
+    color: #ffffff;
+}
+
+.one ul li:hover .submenu {
+    display: block;
+}
+
+
+/* -----------  */
+
+.acaunts {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.lk {
+    cursor: pointer;
+}
+
+.pocup {
+    display: flex;
+    color: #ffffff;
+}
+
+.poisk {
+    margin-right: 4%;
+}
+
+.sum {
+    padding-left: 5%;
+}
+
+.block {
+    padding-top: 10%;
+}
+
+.galv-txt {
+    color: var(--black, #121214);
+    /* H2 */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.9375rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2.625rem;
+    /* 135.484% */
+    text-transform: uppercase;
+}
+
+.align {
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+}
+
+.spisok {
+    border-radius: 0.3125rem;
+    border: 2px solid #E9EAEE;
+    background: #FFF;
+    width: 22rem;
+}
+
+.block {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.txt-spisok {
+    color: var(--dark_gray, #303030);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.625rem;
+    /* 280% */
+    padding-left: 5%;
+    cursor: pointer;
+}
+
+.txt-spisok:hover {
+    color: #006CEA;
+    transition: .5s linear;
+}
+
+.txt-spisok:focus {
+    color: #006CEA;
+}
+
+.left {
+    padding-top: 5%;
+}
+
+.hello-txt {
+    color: var(--dark_gray, #303030);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.375rem;
+    /* 100% */
+}
+
+.glav-block {
+    display: flex;
+}
+
+.right {
+    padding-top: 5%;
+    padding-left: 4%;
+}
+
+.hello-block {}
+
+.container-right {
+    border-radius: 0.3125rem;
+    border: 1px solid #F6F6F6;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    height: 23rem;
+    justify-content: space-around;
+    width: 55rem;
+}
+
+.blocki-txt {
+    color: var(--dark_gray, #303030);
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.375rem;
+    /* 129.412% */
+}
+
+.line {
+    display: flex;
+    justify-content: space-around;
+    width: 55rem;
+}
+
+.blocki a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.3125rem;
+    border: 1px solid #F6F6F6;
+    background: #FFF;
+    width: 17rem;
+    height: 10rem;
+    justify-content: center;
+}
+
+.blocki a:hover {
+    transform: scale(1.2);
+    transition: .5s linear;
+}
+
+.blocki a:focus {
+    border: 1px solid #006CEA;
+}
+
+.coontainer {
+    background: var(--black, #121214);
+    width: 100%;
+    height: 23rem;
+    margin-top: 15%;
+}
+
+.blocks {
+    padding: 5% 7% 0 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-text {
+    color: #FFF;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.75rem;
+    /* 186.667% */
+    text-transform: uppercase;
+}
+
+.mid-txt a {
+    color: #DCDCE0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+    /* 186.667% */
+}
+
+.mid-txt a:hover {
+    color: #257ee4;
+    /* 186.667% */
+}
+
+.mes {
+    display: flex;
+}
+
+.mes a {
+    padding-left: 5%;
+}
+
+.prava {
+    padding: 2% 7% 0 7%;
+    color: #DCDCE0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+}
+
+.burger-menu {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    background-color: blueviolet;
+    height: 20rem;
+    text-align: center;
+    padding-top: 25%;
+}
+
+.custom-field {
+    font-size: 14px;
+    position: relative;
+    --field-padding: 12px;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-field input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 25rem;
+    font-size: 14px;
+    padding: var(--field-padding);
+    margin-top: 1%;
+}
+
+.email {}
+
+.custom-field label {
+    color: #3C3D44;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.375rem;
+    /* 169.231% */
+}
+
+.container-right1 {
+    border-radius: 0.3125rem;
+    border: 1px solid #F6F6F6;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    height: 23rem;
+    /* justify-content: space-around; */
+    width: 55rem;
+    display: none;
+}
+
+.container-right2 {
+    border-radius: 0.3125rem;
+    border: 1px solid #F6F6F6;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    height: 23rem;
+    justify-content: space-around;
+    width: 55rem;
+}
+
+.blocki {
+    padding-left: 3%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* .ferstname {
+    padding-left: 3%;
+} */
+
+.bot {
+    display: flex;
+    justify-content: space-around;
+}
+
+.katalogh {
+    display: flex;
+    justify-content: center;
+    padding-top: 7%;
+    padding-bottom: 5%;
+}
+
+.katalogh a {
+    display: inline-flex;
+    padding: 1rem 2.4875rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3125rem;
+    background: var(--black, #121214);
+    text-transform: capitalize;
+    transition: .5s linear;
+}
+
+.katalogh a:hover {
+    transform: scale(1.2);
+}

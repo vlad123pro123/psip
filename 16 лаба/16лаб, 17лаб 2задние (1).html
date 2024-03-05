@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма с валидацией имени и номера телефона</title>
+</head>
+<body>
+  <h2>Форма с валидацией имени и номера телефона</h2>
+  <form id="myForm" action="#" method="post">
+    <label for="name">Имя:</label><br>
+    <input type="text" id="name" name="name" required pattern="[A-Za-zА-Яа-яЁё\s]{2,}"><br><br>
+    
+    <label for="phone">Номер телефона:</label><br>
+    <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9]{1,3}[-. (]*[0-9]{3}[-. )]*[0-9]{3}[-. ]*[0-9]{4}$"><br><br>
+    
+    <input type="submit" value="Отправить">
+  </form>
+</body>
+</html>

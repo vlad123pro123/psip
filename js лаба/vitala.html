@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            max-width: 350px;
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group .error-message {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .form-group .remember-me {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .form-group .remember-me input {
+            margin-right: 8px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Авторизация</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required pattern="[a-zA-Z0-9]+" title="Только латинские буквы и цифры">
+                <div class="error-message" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required pattern=".{6,}" title="Минимум 6 символов">
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="form-group remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Запомнить меня</label>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="submitForm()">Войти</button>
+            </div>
+        </form>
+
+        <div id="output"></div>
+        <div id="output2"></div>
+
+        <script>
+            function submitForm() {
+                // Валидация полей
+                var usernameInput = document.getElementById("username");
+                var passwordInput = document.getElementById("password");
+
+                var usernameError = document.getElementById("usernameError");
+                var passwordError = document.getElementById("passwordError");
+
+                var isValid = true;
+
+                // Проверка логина
+                if (!usernameInput.checkValidity()) {
+                    usernameError.textContent = "Только латинские буквы и цифры";
+                    isValid = false;
+                } else {
+                    usernameError.textContent = "";
+                }
+
+                // Проверка пароля
+                if (!passwordInput.checkValidity()) {
+                    passwordError.textContent = "Минимум 6 символов";
+                    isValid = false;
+                } else {
+                    passwordError.textContent = "";
+                }
+
+                // Если все поля валидны, продолжаем
+                if (isValid) {
+                    // Получаем значения полей формы
+                    var username = usernameInput.value;
+                    var password = passwordInput.value;
+                    var remember = document.getElementById("remember").checked;
+
+                    // Создаем объект с данными
+                    var userData = {
+                        username: username,
+                        password: password,
+                        remember: remember
+                    };
+
+                    // Преобразуем объект в JSON-строку
+                    var jsonUserData = JSON.stringify(userData);
+
+                    // Записываем JSON-строку в localStorage
+                    localStorage.setItem("userData", jsonUserData);
+
+                    // Выводим JSON-строку на текущей странице
+                    var outputDiv = document.getElementById("output2");
+                    outputDiv.textContent = "Данные сохранены в JSON-формате:\n" + jsonUserData;
+                }
+            }
+
+            // При загрузке страницы, проверяем localStorage и выводим сохраненные значения
+            // window.onload = function() {
+            //     var storedUserData = localStorage.getItem("userData");
+
+            //     if (storedUserData) {
+            //         // Выводим сохраненные значения
+            //         var outputDiv = document.getElementById("output");
+            //         outputDiv.textContent = "Сохраненные данные:\n" + storedUserData;
+            //     }
+            // };
+        </script>
+    </div>
+</body>
+</html>

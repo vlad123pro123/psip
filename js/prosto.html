@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+    <form onclick="alert('form')">Form
+        <div onclick=" event.stopPropagation()">DIV1
+            <div onclick="alert('div2')">DIV2
+                <p onclick="alert('p')">P</p>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

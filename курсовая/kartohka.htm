@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Haven</title>
+
+    <link rel="stylesheet" href="style/kartohka.css">
+    <link rel="stylesheet" href="style/media.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wraper">
+        <header>
+
+            <div class="header">
+                <div class="logo"><img src="img/Group 362.svg" alt=""></div>
+                <nav class="one">
+                    <ul class="topmenu">
+
+                        <li><a href="#">Обувь</a></li>
+                        <li><a href="#">Бренды<i class="fa fa-angle-down"></i></a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="katalog.html">Каталог</a>
+                                </li>
+                                <li>
+                                    <a href="">Корзина</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Расчет стоимости</a></li>
+                        <li><a href="#">Информация</a></li>
+                    </ul>
+                </nav>
+                <div class="acaunts">
+
+                    <div class="izbrann"><img class="lk" src="img/header/izb.svg" alt=""></div>
+                    <div class="ak">
+                        <a href="vhode.html"><img class="lk" src="img/header/ak.svg" alt=""></a>
+                    </div>
+                    <div class="pocup">
+                        <div class="sumka"><img class="lk" src="img/header/sumka.svg" alt=""></div>
+                        <div class="sum">1791.2$</div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="burger-menu">
+                <div class="burger-icon"></div>
+                <div class="burger-menu-items">
+                    <ul>
+                        <li><a href="#">Обувь</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="katalog.html">Каталог</a></li>
+                        <li><a href="">Item 2</a></li>
+                        <li><a href="#">Расчет стоимости</a></li>
+                        <li><a href="#">Информация</a></li>
+                    </ul>
+                </div>
+            </div> -->
+        </header>
+        <main>
+            <div class="container">
+                <div class="block">
+                    <div class="left">
+                        <div class="img-glav">
+                            <img id="glav" src="img/kart/Rectangle 83.svg" alt="">
+                            <div class="block-img">
+                                <div class="sideways"><img id="sideeways" src="img/kart/1.svg" alt=""></div>
+                                <div class="up"><img id="up" src="img/kart/2.svg" alt=""></div>
+                                <div class="lap"><img src="img/kart/3.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="name">Кроссовки Nike Court Zoom Cage 2</div>
+                        <div class="txt-size">EU размеры:</div>
+                        <div class="soderh">
+                            <div class="linne">
+                                <div id="36" class="sod-size 36" onclick="changeColor(36)">36</div>
+                                <div class="sod-size" onclick="changeColor(36.5)">36,5</div>
+                                <div class="sod-size" onclick="changeColor(37)">37</div>
+                                <div class="sod-size" onclick="changeColor(37.5)">37,5</div>
+                                <div class="sod-size" onclick="changeColor(38)">38</div>
+                            </div>
+                            <div class="linne">
+
+                                <div class="sod-size" onclick="changeColor(38.5)">38,5</div>
+                                <div class="sod-size" onclick="changeColor(39)">39</div>
+                                <div class="sod-size" onclick="changeColor(39.5)">39,5</div>
+                                <div class="sod-size" onclick="changeColor(40)">40</div>
+                                <div class="sod-size" onclick="changeColor(40.5)">40,5</div>
+                            </div>
+
+                            <div class="linne">
+
+                                <div class="sod-size" onclick="changeColor(41)">41</div>
+                                <div class="sod-size" onclick="changeColor(41.5)">41,5</div>
+                                <div class="sod-size" onclick="changeColor(42)">42</div>
+                                <div class="sod-size" onclick="changeColor(42.5)">42,5</div>
+                                <div class="sod-size" onclick="changeColor(43)">43</div>
+                            </div>
+
+                            <div class="linne">
+                                <div class="sod-size" onclick="changeColor(43.5)">43,5</div>
+                                <div class="sod-size" onclick="changeColor(44)">44</div>
+                                <div class="sod-size" onclick="changeColor(44.5)">44,5</div>
+                            </div>
+                        </div>
+                        <div class="container-size">
+                            <div class="size">размер - 40</div>
+                            <div class="button-vhode">
+                                <div id="add" class="katalog">
+                                    <a href="#">Добавить в корзину ></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detali">
+                    <div class="line-container">
+                        <div class="line">
+                            <div class="txt-line">Детали</div>
+                        </div>
+                    </div>
+                    <div class="container-detali">
+                        <div class="det">
+                            <div class="det-txt">Артикул</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">00000001</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Категория</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">Обувь</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Бренд</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">Nike</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Модель</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">Nike Forse</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Цвет</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">Голубой</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Цена(р)</div>
+                            <div class="det-line"></div>
+                            <div id="price" class="det-name">110</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Количество на складе</div>
+                            <div class="det-line"></div>
+                            <div id="kolvo-sklad" class="det-name">3</div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Количество</div>
+                            <div class="det-line"></div>
+                            <div class="det-name">
+                                <input type="number" id="kolvo" placeholder="1" >
+                            </div>
+                        </div>
+                        <div class="det">
+                            <div class="det-txt">Итоговая цена</div>
+                            <div class="det-line"></div>
+                            <div id="ob-summa" class="det-name">110</div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="predloh">
+                    <div class="txt-predloh">Интересные предложения</div>
+                    <div class="container-predloh">
+                        <div class="lines">
+                            <div class="tovar 1">
+                                <a href=""><img src="img/katalog/Rectangle 22.svg" alt="">
+                                    <div class="name">Air Force 1 Ultra</div>
+                                    <div class="price">
+                                        <div class="ot">от</div>
+                                        <div class="prices">170</div>
+                                        <div class="valuta">RUB</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tovar 2">
+                                <a href=""><img src="img/katalog/Rectangle 22.svg" alt="">
+                                    <div class="name">Air Force 1 Ultra</div>
+                                    <div class="price">
+                                        <div class="ot">от</div>
+                                        <div class="prices">170</div>
+                                        <div class="valuta">RUB</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tovar 3">
+                                <a href=""><img src="img/katalog/Rectangle 22.svg" alt="">
+                                    <div class="name">Air Force 1 Ultra</div>
+                                    <div class="price">
+                                        <div class="ot">от</div>
+                                        <div class="prices">170</div>
+                                        <div class="valuta">RUB</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </main>
+        <footer>
+            <div class="coontainer">
+                <div class="block">
+                    <div class="block-1">
+                        <div class="top-text">Каталог</div>
+                        <div class="mid-txt">
+                            <a href="">Обувь</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Бренды</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Расчет стоимости</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Информация</a>
+                        </div>
+                    </div>
+                    <div class="block-2">
+                        <div class="top-text">Информация</div>
+                        <div class="mid-txt">
+                            <a href="">Блог</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Контакты</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Доставка</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Оплата</a>
+                        </div>
+                    </div>
+                    <div class="block-3">
+                        <div class="top-text">Контакты</div>
+                        <div class="mid-txt">
+                            <a href="">vladstrok23@gmail.com</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">+375445656947</a>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Месенджеры</a>
+                            <div class="mes">
+                                <a href=""><img src="img/snekers/tg.svg" alt=""></a>
+                                <a href=""><img src="img/snekers/tlf.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="mid-txt">
+                            <a href="">Соц.сети</a>
+                            <div class="mes">
+                                <a href=""><img src="img/snekers/vk.svg" alt=""></a>
+                                <a href=""><img src="img/snekers/inst.svg" alt=""></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="block-4"></div>
+                </div>
+                <div class="bot-block">
+                    <div class="prava">© Sneaker-Haven.bu, 2023 — 2025. Интернет - магазин продажи кросовок. Все права защищены.</div>
+                </div>
+
+            </div>
+        </footer>
+
+        </div>
+
+
+        <script src="js/kartohka.js"></script>
+
+</body>
+
+</html>

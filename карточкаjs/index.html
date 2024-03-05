@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" placeholder="Enter your name" required>
+
+            <label for="emailInput">Email:</label>
+            <input type="email" id="emailInput" placeholder="Enter your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+            <label for="mes">Message:</label>
+            <textarea name="message" id="mes" cols="30" rows="5" placeholder="Enter your message" required></textarea>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+
+    <script>
+        function validateForm() {
+            var nameValue = document.getElementById("nameInput").value;
+            var emailValue = document.getElementById("emailInput").value;
+            var messageValue = document.getElementById("mes").value;
+
+            // Проверка на пустые поля
+            if (nameValue.trim() === '' || emailValue.trim() === '' || messageValue.trim() === '') {
+                alert("Пожалуйста, заполните все поля.");
+                return false;
+            }
+
+            // Проверка на соответствие формату email
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(emailValue)) {
+                alert("Пожалуйста, введите корректный адрес электронной почты.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function submitForm() {
+            if (validateForm()) {
+                // Если форма валидна, то продолжаем выполнение
+                // Ваш код для сохранения в Local Storage и отправки данных
+                saveToLocalStorage();
+                showAlert();
+            }
+        }
+
+        function saveToLocalStorage() {
+            var formData = {
+                name: document.getElementById("nameInput").value,
+                email: document.getElementById("emailInput").value,
+                message: document.getElementById("mes").value
+            };
+
+            // Преобразование объекта в строку JSON и сохранение в Local Storage
+            localStorage.setItem("formData", JSON.stringify(formData));
+        }
+
+        function showAlert() {
+            // Получение данных из Local Storage и их вывод в диалоговое окно
+            var formDataString = localStorage.getItem("formData");
+            if (formDataString) {
+                var formData = JSON.parse(formDataString);
+                alert("Имя: " + formData.name + "\nEmail: " + formData.email + "\nСообщение: " + formData.message);
+            } else {
+                alert("Данные отсутствуют в Local Storage.");
+            }
+        }
+
+        window.onload = function() {
+            // Загрузка данных из Local Storage в форму при загрузке страницы
+            var formDataString = localStorage.getItem("formData");
+            if (formDataString) {
+                var formData = JSON.parse(formDataString);
+                document.getElementById("nameInput").value = formData.name;
+                document.getElementById("emailInput").value = formData.email;
+                document.getElementById("mes").value = formData.message;
+            }
+        };
+    </script>
+</body>
+</html>
